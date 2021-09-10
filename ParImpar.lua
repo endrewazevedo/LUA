@@ -1,4 +1,4 @@
---[[print("Vamos verificar se o numero eh par ou impar\nDigite o numero")
+--[[ print("Vamos verificar se o numero eh par ou impar\nDigite o numero")
 
 numero = io.read("*n")
 
@@ -6,9 +6,9 @@ if numero % 2 == 0 then
     print("Par")
 else
     print("Impar")    
-end--]]
+end ]]
 
---[[print("Vamos verificar se o numero eh par ou impar\nDigite o numero")
+--[[ print("Vamos verificar se o numero eh par ou impar\nDigite o numero")
 
 while (numero ~= 0) do
     numero = io.read("*n")
@@ -17,9 +17,9 @@ while (numero ~= 0) do
     else
         print("Par")    
     end
-end--]]
+end ]]
 
---[[print("Vamos verificar se o numero eh par ou impar\nDigite o numero")
+--[[ print("Vamos verificar se o numero eh par ou impar\nDigite o numero")
 repeat
     numero = io.read("*n")
     if numero % 2 ~= 0 then
@@ -27,11 +27,12 @@ repeat
     else
         print("Par")    
     end
-until numero == 0--]]
-
+until numero == 0
+ ]] 
 print("Vamos verificar se o numero eh par ou impar\nDigite o numero")
+
 for i=1, 5 do
-    numero = io.read("*n")
+    numero = io.read()
     if numero % 2 ~= 0 then
         print("Impar")
     else

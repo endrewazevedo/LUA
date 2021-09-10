@@ -27,12 +27,30 @@ function exibe_tabuleiro(t) -- Essa função irá percorrer a table e exibirá o
 end
 
 function jogada_O(t) -- Essa função adiciona a jodada do Jogador de O
-    repeat 
-        local jogada_valida = 0
-        print("Vez de O\nDigite o valor da linha")
-        linha = io.read("*n")
-        print("Digite o valor da coluna")
-        coluna = io.read("*n")
+    repeat
+        local jogada_valida = 0 
+        repeat 
+            print("Vez de O\nDigite o valor da linha")
+            linha = io.read("*n")
+            if(linha > 3) then
+                print("Jogada invalida")
+                jogada_valida = 1
+            else
+                jogada_valida = 0
+            end
+        until jogada_valida == 0
+
+        repeat
+            print("Digite o valor da coluna")
+            coluna = io.read("*n")
+            if(coluna > 3) then
+                print("Jogada invalida")
+                jogada_valida = 1
+            else
+                jogada_valida = 0
+            end
+        until jogada_valida == 0
+
         if(t[linha][coluna] ~= 0) then
             print("Jogada invalida")
             jogada_valida = 1
@@ -46,10 +64,28 @@ end
 function jogada_X(t) ---- Essa função adiciona a jodada do Jogador de X
     repeat
         local jogada_valida = 0 
-        print("Vez de X\nDigite o valor da linha")
-        linha = io.read("*n")
-        print("Digite o valor da coluna")
-        coluna = io.read("*n")
+        repeat 
+            print("Vez de X\nDigite o valor da linha")
+            linha = io.read("*n")
+            if(linha > 3) then
+                print("Jogada invalida")
+                jogada_valida = 1
+            else
+                jogada_valida = 0
+            end
+        until jogada_valida == 0
+
+        repeat
+            print("Digite o valor da coluna")
+            coluna = io.read("*n")
+            if(coluna > 3) then
+                print("Jogada invalida")
+                jogada_valida = 1
+            else
+                jogada_valida = 0
+            end
+        until jogada_valida == 0
+
         if(t[linha][coluna] ~= 0) then
             print("Jogada invalida")
             jogada_valida = 1
@@ -113,7 +149,7 @@ end
 
 
 print("Bem vindo jogadores, vamos comecar a nossa partida!\n\n")
-jogadas = 0
+jogadas = 0 --Indica de quem é a vez, se for par vez de X, se for impar vez de O
 linha = 0
 coluna = 0
 ganhou = true
